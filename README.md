@@ -1,6 +1,6 @@
 # Modelo de Apresentação dos Projetos
 
-# Projeto `<Título do Projeto>`
+# Projeto `Regional recipes and their costs`
 
 
 # Equipe `PLAY`
