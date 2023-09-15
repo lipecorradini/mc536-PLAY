@@ -3,7 +3,7 @@
 # Projeto `<Título do Projeto>`
 
 
-# Equipe `<nome da equipe>`
+# Equipe `PLAY`
 
 - `André Santos Rocha` - `235887`
 - `Gustavo Henrique Luiz Merlo` - `171401`
