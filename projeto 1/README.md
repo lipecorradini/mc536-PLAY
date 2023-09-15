@@ -8,13 +8,24 @@
 
 > Descrição do tema do projeto, incluindo motivação e contexto gerador.
 
+Objetiva-se, por meio deste projeto, realizar uma análise econômica e social no tocante à dietas e alimentos consumidos ao redor do globo, levando em conta os conceitos e ferramentas relacionados à Banco de Dados.
+Para isso, utilizamos, principalmente, as bases World Food Prices, CulinaryDB e FooDB, que nos garantem acesso aos custos de ingredientes e receitas da maioria das regiões ao redor do planeta. Desse modo, conseguimos avaliar nutricional e economicamente as múltiplas dietas adotadas mundialmente e associá-las ao seu contexto regional, econômico e social.
+
 ## Bases de Dados
 
 > Elencar as bases de dados fonte utilizadas no projeto.
 
+<<<<<<< HEAD
 | título da base     | link                           | breve descrição             |
 | ------------------ | ------------------------------ | --------------------------- |
 | `<título da base>` | `<link para a página da base>` | `<breve descrição da base>` |
+=======
+título da base | link | breve descrição
+----- | ----- | -----
+`World Food Prices` | `https://data.humdata.org/dataset/wfp-food-prices` | `Base de dados que contém informações sobre o preço de alimentos como arroz, feijão, açúcar, entre outros; de mais de 1500 mercados distribuídos por 76 países ao redor do mundo.`
+`Culinary DB` | `https://cosylab.iiitd.edu.in/culinarydb/#databasedescription` | `Base de dados que contêm informações sobre ingredientes utilizados e receitas tradicionais de 22 regiões geoculturais do globo.`
+`FooDB` | `https://foodb.ca/` | `Base de dados sobre informações químicas e biológicas, como macro e micronutrientes, de centenas de alimentos utilizados no planeta inteiro.`
+>>>>>>> 64db65ed2790edd3ed7f917bf5e65f94717cd0ec
 
 ## Modelo Conceitual
 
