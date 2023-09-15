@@ -27,14 +27,9 @@ título da base | link | breve descrição
 
 ## Modelo Conceitual
 
-> Coloque aqui a imagem do modelo conceitual em ER ou UML, como o exemplo a seguir:
 > <img src="../images/ER - Projeto1.jpeg" width="800px" height="auto">
 
 ## Modelos Lógicos
-
-> Coloque aqui o modelo lógico relacional dos bancos de dados relacionados ao modelos conceitual. Sugere-se o formato a seguir.
-
-> Exemplo de modelo lógico relacional
 
 ```
 Food_DB(_Food_ID_, foodb_name, nutrients)
