@@ -15,7 +15,9 @@ Para isso, utilizamos, principalmente, as bases World Food Prices, CulinaryDB e 
 
 título da base | link | breve descrição
 ----- | ----- | -----
-`<título da base>` | `<link para a página da base>` | `<breve descrição da base>`
+`World Food Prices` | `https://data.humdata.org/dataset/wfp-food-prices` | `Base de dados que contém informações sobre o preço de alimentos como arroz, feijão, açúcar, entre outros; de mais de 1500 mercados distribuídos por 76 países ao redor do mundo.`
+`Culinary DB` | `https://cosylab.iiitd.edu.in/culinarydb/#databasedescription` | `Base de dados que contêm informações sobre ingredientes utilizados e receitas tradicionais de 22 regiões geoculturais do globo.`
+`FooDB` | `https://foodb.ca/` | `Base de dados sobre informações químicas e biológicas, como macro e micronutrientes, de centenas de alimentos utilizados no planeta inteiro.`
 
 ## Modelo Conceitual
 
