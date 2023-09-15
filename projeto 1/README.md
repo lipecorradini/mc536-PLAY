@@ -41,40 +41,39 @@ Check_region(_Country_, _region_)
 
 > Liste aqui as perguntas de pesquisa/análise. Nem todas as perguntas precisam de implementação associada. É possível haver perguntas em que a solução é apenas descrita para demonstrar o potencial da base. Abaixo são ilustradas três perguntas, mas pode ser um número maior a critério da equipe.
 
-#### Pergunta/Análise 1
+#### Pergunta 1
 
-> - Pergunta 1
+> - Como relacionar alimentos iguais que possuem id's diferentes em bancos de dados distintos?
 >
->   - Explicação sucinta da análise que será feita.
+>   - Para identificar alimentos iguais criaremos um id_universal para cada alimento. Com esse id, seremos capazes de averiguar a base a qual o alimento pertence, bem como relacioná-lo a outras bases.
 
-#### Pergunta/Análise 2
+#### Pergunta 2
 
-> - Pergunta 2
+> - Como descobrir o preco médio das refeicoes características de uma dada região?  
 >
->   - Explicação sucinta da análise que será feita.
+>   - A partir do WF_PRICES, obtemos os preços de alimentos em variadas regiões do mundo. A partir do CulinaryDB, obtemos as receitas características de uma dada região e tambem os ingredientes dessas receitas. Assim, podemos verificar o preço dos ingredientes e, com isso, descobrir o preço da receita. Como temos informações de vários supermercados, podemos, ainda, calcular um preço médio com maior nível de acuidade.
 
-#### Pergunta/Análise 3
+#### Pergunta 3
 
-> - Pergunta 3
+>  - Qual a relação entre o preço do ingrediente e o seu uso em receitas por região?
 >
->   - Explicação sucinta da análise que será feita.
+>   - A partir da base de dados WF_Prices somos capazes de aferir o preço dos alimentos. A partir da base CulinaryDB, associa-se o preço do alimento com o seu uso em receitas típicas, verificando uma relação entre essas duas informações.
 
 ### Perguntas/Análise Propostas mas Não Implementadas
 
-#### Pergunta/Análise 1
+#### Pergunta 1
 
-> - Pergunta 1
+> - Como deduzir o perfil econômico de uma região com o perfil nutricional das refeições típicas?
 >
->   - Explicação em linhas gerais de como a base pode ser usada para responder esta pergunta e a sua relevância.
+>   - Podemos utilizar a nossa base de dados CulinaryDB, avaliando as receitas de uma região. Com as receitas, seremos capazes de descobrir os ingredientes na base de dados FoodDB, por meio dos quais formaremos um perfil nutricional. Com esse perfil em mão seria possível construir uma análise sobre os reflexos da economia regional sobre a alimentação da população. 
 
-#### Pergunta/Análise 2
+#### Pergunta 2
 
-> - Pergunta 2
+> - Como a culinária de uma região influencia no seu perfil nutricional?
+>  
+>   - Analisando a base CulinaryDB, sabemos quais alimentos são mais utilizados nas receitas locais. Além disso, o FoodDB nos fornece os nutrientes de alimentos. Assim, sabemos o perfil nutricional de uma dada região por suas receitas típicas. 
+
+#### Pergunta 3
+> - Qual o custo relativo para seguir uma mesma dieta nutricional em países distintos?
 >
->   - Explicação em linhas gerais de como a base pode ser usada para responder esta pergunta e a sua relevância.
-
-#### Pergunta/Análise 3
-
-> - Pergunta 3
->
->   - Explicação em linhas gerais de como a base pode ser usada para responder esta pergunta e a sua relevância.
+>   - A partir do FoodDB e do WF_Prices, obtemos os nutrientes e os preços dos alimentos, respectivamente. Combinando essas duas informações, seria possível determinar o custo relativo de consumir os mesmos nutrientes em países distintos.  
