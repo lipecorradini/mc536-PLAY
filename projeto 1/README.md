@@ -2,7 +2,7 @@
 
 ## Slides da Apresentação
 
-> Coloque aqui o link para o PDF da apresentação
+> [link apresentacao](https://docs.google.com/presentation/d/1N923BpFqJgYXyllvehe5JJaJiW3ZCo-WHdwJqBCGiD0/edit#slide=id.g27f0b59b2bb_1_11)
 
 ## Motivação e Contexto
 Objetiva-se, por meio deste projeto, realizar uma análise econômica e social no tocante à dietas e alimentos consumidos ao redor do globo, levando em conta os conceitos e ferramentas relacionados à Banco de Dados.
