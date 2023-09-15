@@ -37,9 +37,18 @@ título da base | link | breve descrição
 > Exemplo de modelo lógico relacional
 
 ```
-PESSOA(_Código_, Nome, Telefone)
-ARMÁRIO(_Código_, Tamanho, Ocupante)
-  Ocupante chave estrangeira -> PESSOA(Código)
+Food_DB(_Food_ID_, foodb_name, nutrients)
+W_F_Prices(_Food_region_ID_, foodw_name, food_price, Country)
+Culinary_DB(_Recipe_ID_, _ingredient_, recipe_name, region)
+Check_price(_foodb_name_, _foodw_name_)
+  foodb_name chave estrangeira -> Food_DB(foodb_name)
+  foodw_name chave estrangeira -> W_F_Prices(foodw_name)
+Food_in_recipe(_foodb_name_, _Recipe_ID_, Food_ID, ingredient)
+  foodb_name, Food_ID chave estrangeira -> Food_DB(foodb_name, Food_ID)
+  Recipe_ID, ingredient chave estrangeira -> Culinary_DB(Recipe_ID, ingredient)
+Check_region(_Country_, _region_)
+  region chave estrangeira -> Culinary_DB(region)
+  Country chave estrangeira -> W_F_Prices(Country)
 ```
 
 ## Perguntas de Pesquisa/Análise
