@@ -55,7 +55,7 @@ Check_region(_Country_, _region_)
 
 #### Pergunta 3
 
->  - Qual a relação entre o preço do ingrediente e o seu uso em receitas por região?
+> - Qual a relação entre o preço do ingrediente e o seu uso em receitas por região?
 >
 >   - A partir da base de dados WF_Prices somos capazes de aferir o preço dos alimentos. A partir da base CulinaryDB, associa-se o preço do alimento com o seu uso em receitas típicas, verificando uma relação entre essas duas informações.
 
