@@ -2,20 +2,18 @@
 
 ## Motivação e Contexto
 
-> Descrição do tema do projeto, incluindo motivação e contexto gerador
+> Objetiva-se, por meio deste projeto, realizar uma análise econômica e social no tocante à dietas e alimentos consumidos ao redor do globo, levando em conta os conceitos e ferramentas relacionados à Banco de Dados. Para isso, utilizamos, principalmente, as bases World Food Prices, CulinaryDB e FooDB, que nos garantem acesso aos custos de ingredientes e receitas da maioria das regiões ao redor do planeta. Desse modo, conseguimos avaliar nutricional e economicamente as múltiplas dietas adotadas mundialmente e associá-las ao seu contexto regional, econômico e social.
 
 ## Slides
 
 ## Apresentação Prévia
-> Coloque aqui o link para o PDF da apresentação prévia
+> [link apresentação prévia](https://docs.google.com/presentation/d/1N923BpFqJgYXyllvehe5JJaJiW3ZCo-WHdwJqBCGiD0/edit#slide=id.g27f0b59aa52_0_83)
 
 ## Apresentação Final
-> Coloque aqui o link para o PDF da apresentação final
+> [link apresentação final]()Coloque aqui o link para o PDF da apresentação final
 
 ## Modelo Conceitual
-
-> Coloque aqui a imagem do modelo conceitual final em ER ou UML, como o exemplo a seguir:
-> ![ER Taxi](images/er-taxi.png)
+<img src="./assets/projeto_final/modelo_conceitual_entrega_final.jpeg" width="800px" height="auto">
 
 ## Modelos Lógicos
 
@@ -50,7 +48,8 @@ título do arquivo/base | link | breve descrição
 
 título da base | link | breve descrição
 ----- | ----- | -----
-`<título da base>` | `<link para a página da base>` | `<breve descrição da base>`
+`Culinary DB` | `https://cosylab.iiitd.edu.in/culinarydb/#databasedescription` | `Base de dados que contêm informações sobre ingredientes utilizados e receitas tradicionais de 22 regiões geoculturais do globo.`
+`FooDB` | `https://foodb.ca/` | `Base de dados sobre informações químicas e biológicas, como macro e micronutrientes, de centenas de alimentos utilizados no planeta inteiro.`
 
 ## Detalhamento do Projeto
 > Apresente aqui detalhes do processo de construção do dataset e análise. Nesta seção ou na seção de Perguntas podem aparecer destaques de código como indicado a seguir. Note que foi usada uma técnica de highlight de código, que envolve colocar o nome da linguagem na abertura de um trecho com `~~~`, tal como `~~~python`.
@@ -62,9 +61,6 @@ sns.set(color_codes=True);
 sns.distplot(df.Hemoglobin);
 plt.show();
 ~~~
-
-> Se usar Orange para alguma análise, você pode apresentar uma captura do workflow, como o exemplo a seguir e descrevê-lo:
-![Workflow no Orange](images/orange-zombie-meals-prediction.png)
 
 > Coloque um link para o arquivo do notebook, programas ou workflows que executam as operações que você apresentar.
 
