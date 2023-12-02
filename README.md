@@ -10,7 +10,7 @@
 > [link apresentação prévia](https://docs.google.com/presentation/d/1N923BpFqJgYXyllvehe5JJaJiW3ZCo-WHdwJqBCGiD0/edit#slide=id.g27f0b59aa52_0_83)
 
 ## Apresentação Final
-> [link apresentação final]()Coloque aqui o link para o PDF da apresentação final
+> [link apresentação final](https://docs.google.com/presentation/d/1LnQcKPTvOaCPmFX3a4G9v9FpPh1NK7QrJTUFfLJPA2Y/edit#slide=id.p)
 
 ## Modelo Conceitual
 <img src="./assets/projeto_final/modelo_conceitual_entrega_final.jpeg" width="800px" height="auto">
@@ -37,6 +37,7 @@ ARMÁRIO(_Código_, Tamanho, Ocupante)
 
 título do arquivo/base | link | breve descrição
 ----- | ----- | -----
+`CountriesTable` | `https://raw.githubusercontent.com/lipecorradini/mc536-PLAY/main/data/interim/CountriesTable.csv` | `Tabela que relaciona todos os países existentes na base de dados "Food Prices DB" com sua respectiva subregião geocultural estabelecida pela CulinaryDB.`
 `<título do arquivo/base>` | `<link para arquivo/base>` | `<breve descrição do arquivo/base>`
 
 > Os arquivos finais do dataset publicado devem ser colocados na pasta `data`, em subpasta `processed`. Outros arquivos serão colocados em subpastas conforme seu papel (externo, interim, raw). A diferença entre externo e raw é que o raw é em formato não adaptado para uso. A pasta `raw` é opcional, pois pode ser substituída pelo link para a base original da seção anterior.
