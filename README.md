@@ -89,7 +89,8 @@ plt.show();
 > ![Comunidade no Cytoscape](images/cytoscape-comunidade.png)
 
 #### Pergunta/Análise 1
-> *  Como avaliar diversidade alimentar e nutritiva perante dietas de diferentes culturas?
+> * Como avaliar diversidade alimentar e nutritiva perante dietas de diferentes culturas?
+> 
 >   * Realizou-se uma projeção sobre os nós do tipo "Receita", de modo a interligá-los caso possuam no mínimo 3 ingredientes em comum com outra receita. Assim, é possível comparar o número de receitas semelhantes entre si através de todas as subregiões. Consequentemente, tende-se a concluir que subregiões com uma grande quantidade de receitas semelhantes possuem menor diversidade alimentar. É possível, portanto, avaliar qual parte do globo possui maior variação dentro da sua dieta. 
 
 ```cypher
