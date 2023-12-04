@@ -88,12 +88,25 @@ plt.show();
 
 > ![Comunidade no Cytoscape](images/cytoscape-comunidade.png)
 
-#### Pergunta/Análise 1
-> * Pergunta 1
->   
->   * Explicação sucinta da análise que será feita e conjunto de queries que
->     responde à pergunta.
+#### Como avaliar diversidade alimentar e nutritiva perante dietas de diferentes culturas?
+> Realizou-se uma projeção sobre os nós do tipo "Receita", de modo a interligá-los caso possuam no mínimo 3 ingredientes em comum com outra receita. Assim, é possível comparar o número de receitas semelhantes entre si através de todas as subregiões. Consequentemente, tende-se a concluir que subregiões com uma grande quantidade de receitas semelhantes possuem menor diversidade alimentar. É possível, portanto, avaliar qual parte do globo possui maior variação dentro da sua dieta. 
 
+```cypher
+MATCH (r1:Receita)-[:Contem]->(i:Ingrediente)<-[:Contem]-(r2:Receita)
+WITH r1, r2, i, COUNT(*) AS arestasComum
+WHERE arestasComum >= 3
+MERGE (r1)-[s:Semelhante]->(r2)
+ON CREATE 
+  SET s.weight = 1
+ON MATCH 
+  SET s.weight = s.weight + 1
+
+MATCH (r1:Receita)-[:Semelhante]-(r2:Receita)
+WHERE r1.subregiao = r2.subregiao
+WITH r1.subregiao AS subregiao, COUNT(*) AS num_semelhantes
+RETURN subregiao, num_semelhantes
+ORDER BY num_semelhantes DESC
+```
 #### Pergunta/Análise 2
 > * Pergunta 2
 >   
