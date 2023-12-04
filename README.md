@@ -26,7 +26,7 @@ ARMÁRIO(_Código_, Tamanho, Ocupante)
   Ocupante chave estrangeira -> PESSOA(Código)
 ~~~
 
-![Modelo Lógico de Grafos](./assets/projeto_final/modelo_logico_grafo.jpeg)
+![Modelo Lógico de Grafos](./assets/projeto_final/modelo_logico_grafo.png)
 
 ## Dataset Publicado
 > Se ao tratar e integrar os dados originais foram produzidas novas bases relacionais ou de grafos, elencar essas bases.
