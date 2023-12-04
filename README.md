@@ -10,7 +10,7 @@
 > [link apresentação prévia](https://docs.google.com/presentation/d/1N923BpFqJgYXyllvehe5JJaJiW3ZCo-WHdwJqBCGiD0/edit#slide=id.g27f0b59aa52_0_83)
 
 ## Apresentação Final
-> [link apresentação final](https://docs.google.com/presentation/d/1LnQcKPTvOaCPmFX3a4G9v9FpPh1NK7QrJTUFfLJPA2Y/edit#slide=id.p)
+> [link apresentação final](https://docs.google.com/presentation/d/1Taj48a8GKqPzU9CUbP9y4i7bNl9tDlVoA_tJ8n6gR8g/edit#slide=id.g2a1efa1ef36_0_0)
 
 ## Modelo Conceitual
 <img src="./assets/projeto_final/modelo_conceitual_entrega_final.jpeg" width="800px" height="auto">
