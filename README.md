@@ -134,9 +134,11 @@ ORDER BY num_semelhantes DESC
 ### Perguntas/Análise Propostas mas Não Implementadas
 
 #### Pergunta/Análise 1
-> * Pergunta 1
->   
->   * Explicação em linhas gerais de como a base pode ser usada para responder esta pergunta e a sua relevância.
+> * Qual o impacto do preço dos ingredientes para cada região no seu uso em receitas?
+>
+>   * Com Category_Prices_per_Region iremos escolher duas regiões e comparar a correlação entre o preço de cada categoria de ingredientes e o seu uso nas receitas típicas da região. Assim, para cada categoria será possível analisar o quão impactante o preço é na presença dos ingredientes na alimentação de uma região. O resultado esperado é quanto maior o preço, menor a presença, porém o impacto do preço não é o mesmo para todas regiões, o que será observado com a análise.
+>   * Para isso usamos Category_Prices_per_Region para escolher duas regiões para comparação. Usaremos Foodb_to_Food_Prices e Ingredients_to_Foodb_Groups  para obter os ingredientes que pertencem às categorias que estamos analisando. Agora, com 04_Recipe-Ingredients_Aliases e 01_Recipe_Details  podemos contar quantas vezes uma categoria de alimentos foi utilizada em uma receita, e então contar quantas dessas receitas aparecem em cada uma das regiões analisadas. Por fim, com o preço médio de uma categoria, e o número de usos dessa categoria nas receitas da região, poderemos calcular um coeficiente de correlação entre elas e analisar o quão impactante o preço foi no uso dos ingredientes nas receitas.
+
 
 #### Pergunta/Análise 2
 > * Pergunta 2
