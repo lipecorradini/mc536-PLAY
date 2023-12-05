@@ -62,7 +62,17 @@ título da base | link | breve descrição
 `World Development Indicators (DataBank)` | `https://databank.worldbank.org/reports.aspx?source=2&series=NY.GDP.PCAP.CD&country=#` | `Base de dados que contém informações sobre o PIB per capta de todos os países do mundo.`
 
 ## Detalhamento do Projeto
-> ALTERAR (LIPE FEZ ERRADO) A partir da escolha de nossas bases, foi preciso produzir um dataset que as relacionassem. Nesse processo, foi necessário relacionar países com suas resepctivas regiões, o que foi feito manualmente por integrantes e gerou a tabela CountriesTable. Além disso, os alimentos estavam classificados e/ou nomeados de formas diferentes nas bases. Logo, houve também um esforço para relacionar as categorias descritas na base Foodb com as descritas no Food_Prices, o que resultou na tabela Foodb_to_Food_Prices. Esse processo foi feito adicionando uma coluna à tabela FooDB e realizando UPDATES consecutivos em que relacionávamos o.Para o uso da tabela FooDB, retiramos as colunas consideradas dispensáveis à nossa análise, o que 
+<h3> Ideia Principal </h3>
+
+A ideia geral do projeto consiste em realizar análises socioeconômicas com base em informações sobre dietas do globo inteiro. Assim, utilizamos os dados contidos nos datasets descritos na seção [Bases de Dados](#bases-de-dados).
+
+<h3> Integração </h3>
+
+Nota-se, contudo, que os bancos de dados utilizados contêm informações diferentes e categorias distintas. Portanto, buscando realizar uma integração, definimos, então, as principais relações entre as tabelas de dados e, a partir disso, criamos tabelas para cada uma delas. Os principais exemplos a serem ressaltados são os de associação de um país com sua respectiva subregião e um ingrediente com seu grupo alimentar.
+
+<h3> Imprecisão nos Dados </h3>
+Reconhece-se que as bases de dados, assim que obtidas, possuíam informações desnecessárias para o estudo que buscávamos. Portanto, buscando uma agilização das queries e das análises, criamos tabelas novas utilizando apenas as colunas que guardavam valores úteis para o nosso objetivo.
+
 > > Nesta seção ou na seção de Perguntas podem aparecer destaques de código como indicado a seguir. Note que foi usada uma técnica de highlight de código, que envolve colocar o nome da linguagem na abertura de um trecho com `~~~`, tal como `~~~python`.
 > Os destaques de código devem ser trechos pequenos de poucas linhas, que estejam diretamente ligados a alguma explicação. N
 > ão utilize trechos extensos de código. Se algum código funcionar online (tal como um Jupyter Notebook), aqui pode haver links.
@@ -87,9 +97,26 @@ plt.show();
 > Se for notebook, ele estará dentro da pasta `notebook`. Se por alguma razão o código não for executável no Jupyter, coloque na pasta `src` (por exemplo, arquivos do Orange ou Cytoscape). Se as operações envolverem queries executadas atraves de uma interface de um SGBD não executável no Jupyter, como o Cypher, apresente na forma de markdown.
 
 ## Evolução do Projeto
-> Relatório de evolução, descrevendo as evoluções na modelagem do projeto, dificuldades enfrentadas, mudanças de rumo, melhorias e lições aprendidas. Referências aos diagramas, modelos e recortes de mudanças são bem-vindos.
-> Podem ser apresentados destaques na evolução dos modelos conceitual e lógico. O modelo inicial e intermediários (quando relevantes) e explicação de refinamentos, mudanças ou evolução do projeto que fundamentaram as decisões.
-> Relatar o processo para se alcançar os resultados é tão importante quanto os resultados.
+
+<h3> 1) Primeira Etapa do Projeto </h3>
+
+Quando começamos o projeto, já possuíamos o nosso objetivo em mente. Porém, não tínhamos grande conhecimento das bases que iríamos utilizar, seja essas as recomendadas ou as externas que viríamos a implementar. Depois de uma procura em conjunto, chegamos na estrutura apresentada na primeira etapa do projeto, vista também, na apresentação de slides prévia.
+
+<h3> 2) Dificuldades </h3>
+
+Percebe-se que a tabela CulinaryDB apresenta informações sobre receitas originais de subregiões geoculturais do planeta. No entanto, nossa base de dados fonte para informações sobre os preços alimentares possui dados referentes a cada país do mundo. Precisamos, portanto, criar uma tabela que associava cada país do mundo à sua respectiva subregião do CulinaryDB. Contudo, observa-se que as divisões desta última não englobam todos os países do mundo e, não possuem um padrão, tendo algumas subregiões referentes a um continente inteiro e outras que compreendem países individuais. Portanto, montamos tal tabela, denominada "Countries", à mão, de modo a garantir que todas as associações fossem precisas.
+Seguindo a mesma lógica, verifica-se que a relação entre as tabelas "CulinaryDB (Ingredientes)" e "FooDB" possuia problemas similares, em que não apresentavam atributos em comum, vide a menor especificidade de uma em relação à outra. Portanto, utilizamos queries em SQL de modo a realizar tal integração.
+ATENÇÃO, PROFESSOR. ISSO É UM PEDIDO DE AJUDA. GUSTAVO, RA: 082342, NÃO FEZ NADA.
+Além disso, no primeiro momento, quando tentamos realizar relações que utilizavam informações de todas as receitas e todos os seus respectivos ingredientes, obtinhamos tabelas de dimensões muito superiores à capacidade de processamento do computador e do software utilizados, e, outras vezes, sequer chegavamos a concluir certas consultas, devido ao tempo de processamento. Então, consultamos diversas fontes na internet, juntamente a colegas de disciplina, que nos levaram a aplicar indexação nas colunas das bases de dados utilizadas nas queries em questão. Com isso, conseguimos concluir análises dependentes dessas tabelas em um tempo extremamente razoável.
+Ademais, tivemos grande dificuldade para a implementação do projeto em grafos, pois possuíamos pouca experiência com Neo4j, e, muitas vezes, encontrávamos barreiras na sintaxe correta de cypher.
+
+<h3> Mudanças de Rumo </h3>
+
+Na segunda etapa do projeto, percebemos que a bases de dados selecionada previamente para análise dos preços de alimentos possuía grandes problemas. Primeiro, notamos que todos os valores presentes estavam na moeda local do país em questão, característica essa que geraria um grande problema na etapa de integração das tabelas, devido a conversão e à inflação ao longo do tempo. Para mais, esse mesmo dataset englobava apenas uma parte do globo (aproximadamente 70 países), e ainda sim, de forma não padronizada, visto que a grande maioria desses países eram do mesmo continente. Assim, caso continuassemos utilizando-a, chegaríamos em análises muito fragmentadas e comparações extremamente enviesadas, pois não envolveriam grande diversidade geográfica, cultural, social e econômica entre os países analisados. Portanto, tivemos que buscar um novo banco de dados que fosse amplo o bastante para permitir que alcançassemos nosso objetivo inicial satisfatoriamente.
+
+<h3> Lições Aprendidas </h3>
+
+Percebemos, ao longo do projeto, que a preparação e integração dos dados obtidos é tão importante quanto a precisão e qualidade dos bancos de dados utilizados. Isso, pois uma implementação mal feita das ligações entre tabelas acarreta diretamente em um atraso e piora das análises. Consequentemente, torna-se necessário lidar com problemas de otimização e imprecisão nas conclusões.
 
 ## Perguntas de Pesquisa/Análise Combinadas e Respectivas Análises
 
