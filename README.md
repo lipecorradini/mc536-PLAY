@@ -44,20 +44,19 @@ SubgruposFooDBCDB(_IDIngrediente_, Category, FoodGroup)
 título do arquivo/base | link | breve descrição
 ----- | ----- | -----
 `CountriesTable` | `https://raw.githubusercontent.com/lipecorradini/mc536-PLAY/main/data/interim/CountriesTable.csv` | `Tabela que relaciona todos os países existentes na base de dados "Food Prices DB" com sua respectiva subregião geocultural estabelecida pela CulinaryDB.`
-`<título do arquivo/base>` | `<link para arquivo/base>` | `<breve descrição do arquivo/base>`
-
-> Os arquivos finais do dataset publicado devem ser colocados na pasta `data`, em subpasta `processed`. Outros arquivos serão colocados em subpastas conforme seu papel (externo, interim, raw). A diferença entre externo e raw é que o raw é em formato não adaptado para uso. A pasta `raw` é opcional, pois pode ser substituída pelo link para a base original da seção anterior.
-> Coloque arquivos que não estejam disponíveis online e sejam acessados pelo notebook. Relacionais (usualmente CSV), XML, JSON e CSV ou triplas para grafos.
-> Este é o conjunto mínimo de informações que deve constar na disponibilização do Dataset, mas a equipe pode enriquecer esta seção.
+`Foodb_to_Food_Prices` | `https://raw.githubusercontent.com/lipecorradini/mc536-PLAY/main/data/interim/Foodb_to_Food_Prices.csv` | `Tabela que relaciona uma categoria de alimentos da base FooDB com uma categoria da Food Prices for Nutrition (Databank).`
+`Foods_FooDB` | `https://raw.githubusercontent.com/lipecorradini/mc536-PLAY/main/data/interim/Foods_Foodb.csv` | `Tabela que consiste na base FooDB, excetuando-se as colunas desta que julgamos dispensáveis à nossa análise - por exemplo, description, taxonomia.` 
+`Ingredients_to_Foodb_Groups`|`https://raw.githubusercontent.com/lipecorradini/mc536PLAY/main/data/interim/Ingredients_to_Foodb_Groups.csv` | `Tabela que relaciona os ingredientes da base CulinaryDB com os alimentos da base FooDB.` 
 
 ## Bases de Dados
 > Elencar as bases de dados fonte utilizadas no projeto.
 
 título da base | link | breve descrição
 ----- | ----- | -----
-`Culinary DB` | `https://cosylab.iiitd.edu.in/culinarydb/#databasedescription` | `Base de dados que contêm informações sobre ingredientes utilizados e receitas tradicionais de 22 regiões geoculturais do globo.`
+`Culinary DB` | `https://cosylab.iiitd.edu.in/culinarydb/#databasedescription` | `Base de dados que contém informações sobre ingredientes utilizados e receitas tradicionais de 22 regiões geoculturais do globo.`
 `FooDB` | `https://foodb.ca/` | `Base de dados sobre informações químicas e biológicas, como macro e micronutrientes, de centenas de alimentos utilizados no planeta inteiro.`
 `Food Prices for Nutrition (DataBank)` | `https://databank.worldbank.org/source/food-prices-for-nutrition/Type/TABLE/preview/on#` | `Base de dados que contém informações sobre o preço de grupos de alimentos como frutas, legumes, nozes, óleos, entre outros; de todos os países do mundo.`
+`World Development Indicators (DataBank)` | `https://databank.worldbank.org/reports.aspx?source=2&series=NY.GDP.PCAP.CD&country=#` | `Base de dados que contém informações sobre o PIB per capta de todos os países do mundo.`
 
 ## Detalhamento do Projeto
 > Apresente aqui detalhes do processo de construção do dataset e análise. Nesta seção ou na seção de Perguntas podem aparecer destaques de código como indicado a seguir. Note que foi usada uma técnica de highlight de código, que envolve colocar o nome da linguagem na abertura de um trecho com `~~~`, tal como `~~~python`.
@@ -122,7 +121,7 @@ ORDER BY num_semelhantes DESC
 #### Pergunta/Análise 2
 > * Como avaliar o poder de compra em cada país a partir do custo de receitas?
 >   
->   * A partir das nossas bases de dados Countries e Prices, criamos a tabela Prices_per_Country, que mostra os preços de cada ingrediente por país. Com essa tabela em mãos, é possível calcular o custo de produzir uma determinada receita presente em nossa base de dados CulinaryDB em qualquer país. Para nossa análise, calculamos o custo de todas as receitas em todos países, o que, junto à base de dados XXXXX, a qual mostra o PIB per capta de cada país, permite analisar o poder de compra em cada país. Por poder de compra, entende-se a razão entre o custo de uma receita e o PIB per capta.  
+>   * A partir das nossas bases de dados Countries e Prices, criamos a tabela Recipes_Prices_per_Country, que mostra os preços de cada receita presente no CulinaryDB em todos os países. Para nossa análise, acrescentamos ainda a base de dados World Development Indicators (DataBank), a qual mostra o PIB per capta de cada país, o que nos permite analisar o poder de compra. Por poder de compra, entende-se a razão entre o custo de uma receita e o PIB per capta.
 #### Pergunta/Análise 3
 > * Pergunta 3
 >   
