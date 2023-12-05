@@ -110,11 +110,11 @@ ATENÇÃO, PROFESSOR. ISSO É UM PEDIDO DE AJUDA. GUSTAVO, RA: 082342, NÃO FEZ 
 Além disso, no primeiro momento, quando tentamos realizar relações que utilizavam informações de todas as receitas e todos os seus respectivos ingredientes, obtinhamos tabelas de dimensões muito superiores à capacidade de processamento do computador e do software utilizados, e, outras vezes, sequer chegavamos a concluir certas consultas, devido ao tempo de processamento. Então, consultamos diversas fontes na internet, juntamente a colegas de disciplina, que nos levaram a aplicar indexação nas colunas das bases de dados utilizadas nas queries em questão. Com isso, conseguimos concluir análises dependentes dessas tabelas em um tempo extremamente razoável.
 Ademais, tivemos grande dificuldade para a implementação do projeto em grafos, pois possuíamos pouca experiência com Neo4j, e, muitas vezes, encontrávamos barreiras na sintaxe correta de cypher.
 
-<h3> Mudanças de Rumo </h3>
+<h3> 3) Mudanças de Rumo </h3>
 
 Na segunda etapa do projeto, percebemos que a bases de dados selecionada previamente para análise dos preços de alimentos possuía grandes problemas. Primeiro, notamos que todos os valores presentes estavam na moeda local do país em questão, característica essa que geraria um grande problema na etapa de integração das tabelas, devido a conversão e à inflação ao longo do tempo. Para mais, esse mesmo dataset englobava apenas uma parte do globo (aproximadamente 70 países), e ainda sim, de forma não padronizada, visto que a grande maioria desses países eram do mesmo continente. Assim, caso continuassemos utilizando-a, chegaríamos em análises muito fragmentadas e comparações extremamente enviesadas, pois não envolveriam grande diversidade geográfica, cultural, social e econômica entre os países analisados. Portanto, tivemos que buscar um novo banco de dados que fosse amplo o bastante para permitir que alcançassemos nosso objetivo inicial satisfatoriamente.
 
-<h3> Lições Aprendidas </h3>
+<h3> 4) Lições Aprendidas </h3>
 
 Percebemos, ao longo do projeto, que a preparação e integração dos dados obtidos é tão importante quanto a precisão e qualidade dos bancos de dados utilizados. Isso, pois uma implementação mal feita das ligações entre tabelas acarreta diretamente em um atraso e piora das análises. Consequentemente, torna-se necessário lidar com problemas de otimização e imprecisão nas conclusões.
 
