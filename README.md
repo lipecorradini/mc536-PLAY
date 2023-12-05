@@ -18,18 +18,25 @@
 ## Modelos Lógicos
 ~~~
 IngredientesCDB(NomeIngrediente, _IDIngrediente_, Category)
+
 ReceitasCDB(NomeReceita, _IDReceita_, SubRegiao)
+
 BaseCDB(_NomeIngrediente_, _NomeReceita_)
   NomeIngrediente chave estrangeira -> IngredientesCDB(NomeIngrediente)
   NomeReceita chave estrangeira -> ReceitasCDB(NomeReceita)
+
 FoodPriceDB(_Pais_, 2017[YR2017], _SeriesName_)
+
 Countries(_SubRegiao_, _Pais_)
   SubRegiao chave estrangeira -> ReceitasCDB(SubRegiao)
   Pais chave estrangeira -> FoodPriceDB(Pais)
+
 FooDB(FoodGroup, _FoodName_)
+
 SubgruposFoodDBPrice(_SeriesName_, _FoodGroup_)
   SeriesName chave estrangeira -> FoodPriceDB(SeriesName)
   FoodGroup chave estrangeira -> FooDB(FoodGroup)
+
 SubgruposFooDBCDB(_IDIngrediente_, Category, FoodGroup)
   IDIngrediente chave estrangeira -> IngredientesCDB(IDIngrediente)
   Category chave estrangeira -> IngredientesCDB(Category)
@@ -39,8 +46,6 @@ SubgruposFooDBCDB(_IDIngrediente_, Category, FoodGroup)
 ![Modelo Lógico de Grafos](./assets/projeto_final/modelo_logico_grafo.png)
 
 ## Dataset Publicado
-> Se ao tratar e integrar os dados originais foram produzidas novas bases relacionais ou de grafos, elencar essas bases.
-
 título do arquivo/base | link | breve descrição
 ----- | ----- | -----
 `CountriesTable` | `https://raw.githubusercontent.com/lipecorradini/mc536-PLAY/main/data/interim/CountriesTable.csv` | `Tabela que relaciona todos os países existentes na base de dados "Food Prices DB" com sua respectiva subregião geocultural estabelecida pela CulinaryDB.`
@@ -49,8 +54,6 @@ título do arquivo/base | link | breve descrição
 `Ingredients_to_Foodb_Groups`|`https://raw.githubusercontent.com/lipecorradini/mc536PLAY/main/data/interim/Ingredients_to_Foodb_Groups.csv` | `Tabela que relaciona os ingredientes da base CulinaryDB com os alimentos da base FooDB.` 
 
 ## Bases de Dados
-> Elencar as bases de dados fonte utilizadas no projeto.
-
 título da base | link | breve descrição
 ----- | ----- | -----
 `Culinary DB` | `https://cosylab.iiitd.edu.in/culinarydb/#databasedescription` | `Base de dados que contém informações sobre ingredientes utilizados e receitas tradicionais de 22 regiões geoculturais do globo.`
@@ -59,8 +62,11 @@ título da base | link | breve descrição
 `World Development Indicators (DataBank)` | `https://databank.worldbank.org/reports.aspx?source=2&series=NY.GDP.PCAP.CD&country=#` | `Base de dados que contém informações sobre o PIB per capta de todos os países do mundo.`
 
 ## Detalhamento do Projeto
-> Apresente aqui detalhes do processo de construção do dataset e análise. Nesta seção ou na seção de Perguntas podem aparecer destaques de código como indicado a seguir. Note que foi usada uma técnica de highlight de código, que envolve colocar o nome da linguagem na abertura de um trecho com `~~~`, tal como `~~~python`.
-> Os destaques de código devem ser trechos pequenos de poucas linhas, que estejam diretamente ligados a alguma explicação. Não utilize trechos extensos de código. Se algum código funcionar online (tal como um Jupyter Notebook), aqui pode haver links. No caso do Jupyter, preferencialmente para o Binder abrindo diretamente o notebook em questão.
+> ALTERAR (LIPE FEZ ERRADO) A partir da escolha de nossas bases, foi preciso produzir um dataset que as relacionassem. Nesse processo, foi necessário relacionar países com suas resepctivas regiões, o que foi feito manualmente por integrantes e gerou a tabela CountriesTable. Além disso, os alimentos estavam classificados e/ou nomeados de formas diferentes nas bases. Logo, houve também um esforço para relacionar as categorias descritas na base Foodb com as descritas no Food_Prices, o que resultou na tabela Foodb_to_Food_Prices. Esse processo foi feito adicionando uma coluna à tabela FooDB e realizando UPDATES consecutivos em que relacionávamos o.Para o uso da tabela FooDB, retiramos as colunas consideradas dispensáveis à nossa análise, o que 
+> > Nesta seção ou na seção de Perguntas podem aparecer destaques de código como indicado a seguir. Note que foi usada uma técnica de highlight de código, que envolve colocar o nome da linguagem na abertura de um trecho com `~~~`, tal como `~~~python`.
+> Os destaques de código devem ser trechos pequenos de poucas linhas, que estejam diretamente ligados a alguma explicação. N
+> ão utilize trechos extensos de código. Se algum código funcionar online (tal como um Jupyter Notebook), aqui pode haver links.
+> No caso do Jupyter, preferencialmente para o Binder abrindo diretamente o notebook em questão.
 
 ~~~python
 df = pd.read_excel("/content/drive/My Drive/Colab Notebooks/dataset.xlsx");
