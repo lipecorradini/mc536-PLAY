@@ -189,9 +189,9 @@ ORDER BY num_semelhantes DESC
 
 
 #### Pergunta/Análise 2
-> * Pergunta 2
+> * Quais são os grupos alimentares mais populares? Quais países possuem os menores custos para tais grupos?
 >   
->   * Explicação em linhas gerais de como a base pode ser usada para responder esta pergunta e a sua relevância.
+>   * A partir da base CulinaryDB, poderíamos projetar um grafo onde um ingrediente recebe arestas das receitas da qual ele faz parte. Assim, selecionaríamos os ingredientes que recebessem ao menos N receitas, assim podendo selecionar os ingredientes mais populares entre as receitas (chamados de ingredientes populares). Com isso, seria possível visualizar quais grupos alimentares contêm mais desses ingredientes, e poderíamos calcular o valor médio de um determinado grupo a partir de seus ingredientes populares. Selecionando os 4 grupos mais populares, conectaríamos eles aos países do banco Countries, onde a aresta entre eles seria o preço médio daquele grupo naquele local. Concluídas essas etapas, filtraríamos as ligações para que fosse projetado apenas as que possuíssem valores menores que X. Dessa maneira, seria possível visualizar quais países têm os grupos alimentares mais populares no menor custo.
 
 #### Pergunta/Análise 3
 > * Pergunta 3
