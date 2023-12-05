@@ -173,11 +173,11 @@ ORDER BY num_semelhantes DESC
 > * Como avaliar o poder de compra em cada país a partir do custo de receitas?
 >   
 >   * A partir das nossas bases de dados Countries e Prices, criamos a tabela Recipes_Prices_per_Country, que mostra os preços de cada receita presente no CulinaryDB em todos os países. Para nossa análise, acrescentamos ainda a base de dados World Development Indicators (DataBank), a qual mostra o PIB per capta de cada país, o que nos permite analisar o poder de compra. Por poder de compra, entende-se a razão entre o custo de uma receita e o PIB per capta.
+
 #### Pergunta/Análise 3
-> * Pergunta 3
+> *  Como analisar o perfil nutricional das regiões baseado no seu PIB e uso de ingredientes?
 >   
->   * Explicação sucinta da análise que será feita e conjunto de queries que
->     responde à pergunta.
+>   * Com a base World Development Indicators (DataBank), somos capazes de avaliar o PIB de diferentes regiões. Considerando as regiões Africa e France presentes no nossa base CulinaryDB, obtemos que a região Africa possui um PIB menor que a região France. Isso se torna um fato relevante ao analisarmos a ocorrência de categorias de ingredientes nas receitas de cada região. Na Africa, por exemplo, a taxa de ingredientes vegetais por receita é 3, enquanto na France é 7. Portanto, o perfil nutricional da France pode ser classificado como mais próximo daquele que é ideal para uma vida saudável. Dessa forma, somos capazes de avaliar o perfil nutricional de uma região baseado no seu PIB e uso de ingredientes, sendo, inclusive, possível detectar uma possível insegurança alimentar na região Africa.
 
 ### Perguntas/Análise Propostas mas Não Implementadas
 
