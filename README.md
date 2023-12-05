@@ -172,12 +172,36 @@ ORDER BY num_semelhantes DESC
 #### Pergunta/Análise 2
 > * Como avaliar o poder de compra em cada país a partir do custo de receitas?
 >   
->   * A partir das nossas bases de dados Countries e Prices, criamos a tabela Recipes_Prices_per_Country, que mostra os preços de cada receita presente no CulinaryDB em todos os países. Para nossa análise, acrescentamos ainda a base de dados World Development Indicators (DataBank), a qual mostra o PIB per capta de cada país, o que nos permite analisar o poder de compra. Por poder de compra, entende-se a razão entre o custo de uma receita e o PIB per capta.
+>   * A partir das nossas bases de dados Countries e Prices, criamos a tabela Recipes_Prices_per_Country, que mostra os preços de cada receita presente no CulinaryDB em todos os países. Para nossa análise, acrescentamos ainda a base de dados World Development Indicators (DataBank), a qual mostra o PIB per capita de cada país, o que nos permite analisar o poder de compra. Por poder de compra, entende-se a razão entre o custo de uma receita e o PIB per capita. Isso tudo está descrito no notebook nomeado Country_gdp_analysis.ipynb.
+```SQL
+CREATE TABLE GDP_per_Average_Recipe_Price AS
+SELECT (G.gdp)/AVG(COALESCE(CAST(price AS FLOAT), 0)) AS min_wage_fraction, R.country
+FROM Gdp_per_Country G, Recipes_Prices_Per_Country R
+WHERE G.country = R.country
+GROUP BY R.country
+ORDER BY min_wage_fraction
+```
 
 #### Pergunta/Análise 3
 > *  Como analisar o perfil nutricional das regiões baseado no seu PIB e uso de ingredientes?
 >   
->   * Com a base World Development Indicators (DataBank), somos capazes de avaliar o PIB de diferentes regiões. Considerando as regiões Africa e France presentes no nossa base CulinaryDB, obtemos que a região Africa possui um PIB menor que a região France. Isso se torna um fato relevante ao analisarmos a ocorrência de categorias de ingredientes nas receitas de cada região. Na Africa, por exemplo, a taxa de ingredientes vegetais por receita é 3, enquanto na France é 7. Portanto, o perfil nutricional da France pode ser classificado como mais próximo daquele que é ideal para uma vida saudável. Dessa forma, somos capazes de avaliar o perfil nutricional de uma região baseado no seu PIB e uso de ingredientes, sendo, inclusive, possível detectar uma possível insegurança alimentar na região Africa.
+>   * Com a base World Development Indicators (DataBank), somos capazes de avaliar o PIB de diferentes regiões. Considerando as regiões Africa e France presentes no nossa base CulinaryDB, obtemos que a região Africa possui um PIB menor que a região France. Isso se torna um fato relevante ao analisarmos a ocorrência de categorias de ingredientes nas receitas de cada região. Na Africa, por exemplo, a taxa de ingredientes vegetais por receita é 3, enquanto na France é 7. Portanto, o perfil nutricional da France pode ser classificado como mais próximo daquele que é ideal para uma vida saudável. Dessa forma, somos capazes de avaliar o perfil nutricional de uma região baseado no seu PIB e uso de ingredientes, sendo, inclusive, possível detectar uma possível insegurança alimentar na região Africa. Isso tudo está descrito no notebook nomeado Ingredients_ratio_per_region.ipynb.
+```SQL
+CREATE TABLE Ingredients_Ratio_Africa AS
+SELECT ISR.series_name, COUNT(ISR.series_name)/COALESCE(CAST(3906 AS FLOAT), 0) AS ratio 
+FROM Ingredients_Series_per_Recipes ISR, Recipes_per_Region RR 
+WHERE ISR.recipe_id=RR.recipe_id AND RR.region='Africa'
+GROUP BY ISR.series_name
+ORDER BY ratio
+
+CREATE TABLE Ingredients_Ratio_France AS
+SELECT ISR.series_name, COUNT(ISR.series_name)/COALESCE(CAST(16218 AS FLOAT), 0) AS ratio
+FROM Ingredients_Series_per_Recipes ISR, Recipes_per_Region RR 
+WHERE ISR.recipe_id=RR.recipe_id AND RR.region='France'
+GROUP BY ISR.series_name
+ORDER BY ratio
+```
+
 
 ### Perguntas/Análise Propostas mas Não Implementadas
 
@@ -200,31 +224,3 @@ ORDER BY num_semelhantes DESC
 
 > Coloque um link para o arquivo do notebook que executa o conjunto de queries. Ele estará dentro da pasta `notebook`. Se por alguma razão o código não for executável no Jupyter, coloque na pasta `src`. Se as queries forem executadas atraves de uma interface de um SGBD não executável no Jupyter, como o Cypher, apresente na forma de markdown.
 
-
-
-# Projeto `Regional recipes and their costs`
-
-
-# Equipe `PLAY`
-
-- `André Santos Rocha` - `235887`
-- `Gustavo Henrique Luiz Merlo` - `171401`
-- `José Felipe Theodoro` - `219081`
-- `Luiz Felipe Corradini Rego Costa` - `230613`
-- `Mariano Cho` - `230797`
-- `Pedro da Rosa Pinheiro` - `231081`
-
-
-## Bases de Dados
-| título da base     | link                           | breve descrição             |
-| ------------------ | ------------------------------ | --------------------------- |
-`Food Prices DB` | `https://databank.worldbank.org/source/food-prices-for-nutrition/Type/TABLE/preview/on#` | `Base de dados que contém informações sobre o preço de grupos de alimentos como frutas, legumes, nozes, óleos, entre outros; de todos os países do mundo.`
-`Culinary DB` | `https://cosylab.iiitd.edu.in/culinarydb/#databasedescription` | `Base de dados que contêm informações sobre ingredientes utilizados e receitas tradicionais de 22 regiões geoculturais do globo.`
-`FooDB` | `https://foodb.ca/` | `Base de dados sobre informações químicas e biológicas, como macro e micronutrientes, de centenas de alimentos utilizados no planeta inteiro.`
-
-
-
-## Resumo do Projeto
-
-> Objetiva-se, por meio deste projeto, realizar uma análise econômica e social no tocante à dietas e alimentos consumidos ao redor do globo, levando em conta os conceitos e ferramentas relacionados à Banco de Dados.
-Para isso, utilizamos, principalmente, as bases World Food Prices, CulinaryDB e FooDB, que nos garantem acesso aos custos de ingredientes e receitas da maioria das regiões ao redor do planeta. Desse modo, conseguimos avaliar nutricional e economicamente as múltiplas dietas adotadas mundialmente e associá-las ao seu contexto regional, econômico e social.
