@@ -148,7 +148,7 @@ Percebemos, ao longo do projeto, que a preparação e integração dos dados obt
 
 > ![Comunidade no Cytoscape](images/cytoscape-comunidade.png)
 
-#### Pergunta/Análise 1
+#### Pergunta/Análise 1 (Grafos)
 > * Como avaliar diversidade alimentar e nutritiva perante dietas de diferentes culturas?
 > 
 >   * Realizou-se uma projeção sobre os nós do tipo "Receita", de modo a interligá-los caso possuam no mínimo 3 ingredientes em comum com outra receita. Assim, é possível comparar o número de receitas semelhantes entre si através de todas as subregiões. Consequentemente, tende-se a concluir que subregiões com uma grande quantidade de receitas semelhantes possuem menor diversidade alimentar. É possível, portanto, avaliar qual parte do globo possui maior variação dentro da sua dieta. 
@@ -188,7 +188,7 @@ ORDER BY num_semelhantes DESC
 >   * Para isso usamos Category_Prices_per_Region para escolher duas regiões para comparação. Usaremos Foodb_to_Food_Prices e Ingredients_to_Foodb_Groups  para obter os ingredientes que pertencem às categorias que estamos analisando. Agora, com 04_Recipe-Ingredients_Aliases e 01_Recipe_Details  podemos contar quantas vezes uma categoria de alimentos foi utilizada em uma receita, e então contar quantas dessas receitas aparecem em cada uma das regiões analisadas. Por fim, com o preço médio de uma categoria, e o número de usos dessa categoria nas receitas da região, poderemos calcular um coeficiente de correlação entre elas e analisar o quão impactante o preço foi no uso dos ingredientes nas receitas.
 
 
-#### Pergunta/Análise 2
+#### Pergunta/Análise 2 (Grafos)
 > * Quais são os grupos alimentares mais populares? Quais países possuem os menores custos para tais grupos?
 >   
 >   * A partir da base CulinaryDB, poderíamos projetar um grafo onde um ingrediente recebe arestas das receitas da qual ele faz parte. Assim, selecionaríamos os ingredientes que recebessem ao menos N receitas, assim podendo selecionar os ingredientes mais populares entre as receitas (chamados de ingredientes populares). Com isso, seria possível visualizar quais grupos alimentares contêm mais desses ingredientes, e poderíamos calcular o valor médio de um determinado grupo a partir de seus ingredientes populares. Selecionando os 4 grupos mais populares, conectaríamos eles aos países do banco Countries, onde a aresta entre eles seria o preço médio daquele grupo naquele local. Concluídas essas etapas, filtraríamos as ligações para que fosse projetado apenas as que possuíssem valores menores que X. Dessa maneira, seria possível visualizar quais países têm os grupos alimentares mais populares no menor custo.
