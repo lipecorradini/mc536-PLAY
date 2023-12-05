@@ -64,13 +64,18 @@ título da base | link | breve descrição
 ## Detalhamento do Projeto
 <h3> Ideia Principal </h3>
 
-A ideia geral do projeto consiste em realizar análises socioeconômicas com base em informações sobre dietas do globo inteiro. Assim, utilizamos os dados contidos nos datasets descritos na seção [Bases de Dados](#bases-de-dados).
+A ideia geral do nosso projeto envolve realizar análises socioeconômicas com base em informações sobre dietas do globo inteiro. Assim, utilizamos os dados contidos nos datasets descritos na seção [Bases de Dados](#bases-de-dados).
 
 <h3> Integração </h3>
 
-Nota-se, contudo, que os bancos de dados utilizados contêm informações diferentes e categorias distintas. Portanto, buscando realizar uma integração, definimos, então, as principais relações entre as tabelas de dados e, a partir disso, criamos tabelas para cada uma delas. Os principais exemplos a serem ressaltados são os de associação de um país com sua respectiva subregião e um ingrediente com seu grupo alimentar.
+Nota-se, contudo, que os bancos de dados utilizados contêm categorias distintas e muitas informações desnecessárias para as análises desejadas. Portanto, buscando realizar uma integração, definimos, então, as principais relações entre as tabelas de dados e, a partir disso, realizamos queries, de modo a criarmos múltiplas tabelas de relação e integração apenas com os atributos desejados. Um dos principais exemplos a serem ressaltados é o da tabela "Countries", criada para associar um país com sua respectiva subregião geocultural do dataset "CulinaryDB". Para mais, interligamos também todos os ingredientes analisados com sua categoria alimentar da tabela "FooDB".
+
+~~~SQL
+
+~~~
 
 <h3> Imprecisão nos Dados </h3>
+
 Reconhece-se que as bases de dados, assim que obtidas, possuíam informações desnecessárias para o estudo que buscávamos. Portanto, buscando uma agilização das queries e das análises, criamos tabelas novas utilizando apenas as colunas que guardavam valores úteis para o nosso objetivo.
 
 > > Nesta seção ou na seção de Perguntas podem aparecer destaques de código como indicado a seguir. Note que foi usada uma técnica de highlight de código, que envolve colocar o nome da linguagem na abertura de um trecho com `~~~`, tal como `~~~python`.
@@ -106,7 +111,6 @@ Quando começamos o projeto, já possuíamos o nosso objetivo em mente. Porém, 
 
 Percebe-se que a tabela CulinaryDB apresenta informações sobre receitas originais de subregiões geoculturais do planeta. No entanto, nossa base de dados fonte para informações sobre os preços alimentares possui dados referentes a cada país do mundo. Precisamos, portanto, criar uma tabela que associava cada país do mundo à sua respectiva subregião do CulinaryDB. Contudo, observa-se que as divisões desta última não englobam todos os países do mundo e, não possuem um padrão, tendo algumas subregiões referentes a um continente inteiro e outras que compreendem países individuais. Portanto, montamos tal tabela, denominada "Countries", à mão, de modo a garantir que todas as associações fossem precisas.
 Seguindo a mesma lógica, verifica-se que a relação entre as tabelas "CulinaryDB (Ingredientes)" e "FooDB" possuia problemas similares, em que não apresentavam atributos em comum, vide a menor especificidade de uma em relação à outra. Portanto, utilizamos queries em SQL de modo a realizar tal integração.
-ATENÇÃO, PROFESSOR. ISSO É UM PEDIDO DE AJUDA. GUSTAVO, RA: 082342, NÃO FEZ NADA.
 Além disso, no primeiro momento, quando tentamos realizar relações que utilizavam informações de todas as receitas e todos os seus respectivos ingredientes, obtinhamos tabelas de dimensões muito superiores à capacidade de processamento do computador e do software utilizados, e, outras vezes, sequer chegavamos a concluir certas consultas, devido ao tempo de processamento. Então, consultamos diversas fontes na internet, juntamente a colegas de disciplina, que nos levaram a aplicar indexação nas colunas das bases de dados utilizadas nas queries em questão. Com isso, conseguimos concluir análises dependentes dessas tabelas em um tempo extremamente razoável.
 Ademais, tivemos grande dificuldade para a implementação do projeto em grafos, pois possuíamos pouca experiência com Neo4j, e, muitas vezes, encontrávamos barreiras na sintaxe correta de cypher.
 
