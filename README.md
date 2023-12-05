@@ -90,9 +90,7 @@ SET food_group='Herbs and Spices'
 WHERE category='Spice'
 ~~~
 > Para realizar a integração entre as duas tabelas, utilizamos o comando 'UPDATE' na tabela, e, assim, analisamos manualmente os grupos que aparentavam alto grau de similaridade.
-<h3> Imprecisão nos Dados </h3>
 
-Reconhece-se que as bases de dados, assim que obtidas, possuíam informações desnecessárias para o estudo que buscávamos. Portanto, buscando uma agilização das queries e das análises, criamos tabelas novas utilizando apenas as colunas que guardavam valores úteis para o nosso objetivo.
 
 > > Nesta seção ou na seção de Perguntas podem aparecer destaques de código como indicado a seguir. Note que foi usada uma técnica de highlight de código, que envolve colocar o nome da linguagem na abertura de um trecho com `~~~`, tal como `~~~python`.
 > Os destaques de código devem ser trechos pequenos de poucas linhas, que estejam diretamente ligados a alguma explicação. N
