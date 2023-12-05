@@ -71,9 +71,25 @@ A ideia geral do nosso projeto envolve realizar análises socioeconômicas com b
 Nota-se, contudo, que os bancos de dados utilizados contêm categorias distintas e muitas informações desnecessárias para as análises desejadas. Portanto, buscando realizar uma integração, definimos, então, as principais relações entre as tabelas de dados e, a partir disso, realizamos queries, de modo a criarmos múltiplas tabelas de relação e integração apenas com os atributos desejados. Um dos principais exemplos a serem ressaltados é o da tabela "Countries", criada para associar um país com sua respectiva subregião geocultural do dataset "CulinaryDB". Para mais, interligamos também todos os ingredientes analisados com sua categoria alimentar da tabela "FooDB".
 
 ~~~SQL
-
+CREATE TABLE ingredients_group (
+    name VARCHAR(50),
+    synonyms VARCHAR(200),
+    id VARCHAR(4),
+    category VARCHAR(50)
+) AS SELECT
+    "Aliased Ingredient Name" AS name,
+    "Ingredient Synonyms" AS synonyms,
+    "Entity ID" AS id,
+    "CATEGORY" AS category
+FROM CSVREAD('../data/raw/02_Ingredients.csv');
 ~~~
-
+> Pedaço de código que cria a tabela "ingredients_group" dentro do notebook Jupyter utilizado para fazer a integração.
+~~~SQL
+UPDATE ingredients_group
+SET food_group='Herbs and Spices'
+WHERE category='Spice'
+~~~
+> Para realizar a integração entre as duas tabelas, utilizamos o comando 'UPDATE' na tabela, e, assim, analisamos manualmente os grupos que aparentavam alto grau de similaridade.
 <h3> Imprecisão nos Dados </h3>
 
 Reconhece-se que as bases de dados, assim que obtidas, possuíam informações desnecessárias para o estudo que buscávamos. Portanto, buscando uma agilização das queries e das análises, criamos tabelas novas utilizando apenas as colunas que guardavam valores úteis para o nosso objetivo.
