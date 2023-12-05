@@ -11,6 +11,8 @@
 
 ## Apresentação Final
 > [link apresentação final](https://docs.google.com/presentation/d/1Taj48a8GKqPzU9CUbP9y4i7bNl9tDlVoA_tJ8n6gR8g/edit#slide=id.g2a1efa1ef36_0_0)
+>
+> [link video](https://drive.google.com/file/d/1cRVatcmNG9muYqqDhA-qtbF8ZjEZHf5F/view?usp=drive_link)
 
 ## Modelo Conceitual
 <img src="./assets/projeto_final/modelo_conceitual_entrega_final.jpeg" width="800px" height="auto">
