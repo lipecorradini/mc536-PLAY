@@ -120,11 +120,9 @@ RETURN subregiao, num_semelhantes
 ORDER BY num_semelhantes DESC
 ```
 #### Pergunta/Análise 2
-> * Pergunta 2
+> * Como avaliar o poder de compra em cada país a partir do custo de receitas?
 >   
->   * Explicação sucinta da análise que será feita e conjunto de queries que
->     responde à pergunta.
-
+>   * A partir das nossas bases de dados Countries e Prices, criamos a tabela Prices_per_Country, que mostra os preços de cada ingrediente por país. Com essa tabela em mãos, é possível calcular o custo de produzir uma determinada receita presente em nossa base de dados CulinaryDB em qualquer país. Para nossa análise, calculamos o custo de todas as receitas em todos países, o que, junto à base de dados XXXXX, a qual mostra o PIB per capta de cada país, permite analisar o poder de compra em cada país. Por poder de compra, entende-se a razão entre o custo de uma receita e o PIB per capta.  
 #### Pergunta/Análise 3
 > * Pergunta 3
 >   
